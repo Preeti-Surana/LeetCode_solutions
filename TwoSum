@@ -1,0 +1,26 @@
+Brute Force Approach
+- Check every possible pair of numbers and see if their sum equals the target.
+- code :-
+
+class Solution:
+    def twoSum(self, nums, target):
+        n = len(nums)
+
+        for i in range(n):
+            for j in range(i + 1, n):
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+
+
+Optimized Approach
+- Instead of searching for the second number every time, store already visited numbers in a hashmap.
+- code:-
+
+class Solution:
+    def twoSum(self, nums, target):
+        seen = {}  # dictionary to store number: index
+        for i, num in enumerate(nums):
+            diff = target - num
+            if diff in seen:
+                return [seen[diff], i]
+            seen[num] = i
