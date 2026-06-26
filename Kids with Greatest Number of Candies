@@ -1,0 +1,20 @@
+Approach:-
+- Find the maximum candies among all kids, 
+- then check each kid: if candies[i] + extraCandies is greater than or equal to the maximum, 
+- add True, otherwise add False.
+
+Code:-
+class Solution(object):
+    def kidsWithCandies(self, candies, extraCandies):
+        l=[]
+        maxi = max(candies)
+        for i in range(len(candies)):
+            if(candies[i]+extraCandies >= maxi):
+                l.append(True)
+            else:
+                l.append(False)
+        return l
+
+Time Complexity : O(n)
+Space Complexity : O(n)
+        
