@@ -1,0 +1,30 @@
+Approach:-
+- Traverse the flowerbed from left to right.
+- For every empty plot (0), check:
+- Left side is empty (or it is the first plot)
+- Right side is empty (or it is the last plot)
+- If both are empty:
+   Plant a flower (0 → 1)
+   Decrease n
+- If n becomes 0, return True.
+- After checking all plots, return False.
+Code:-
+class Solution(object):
+    def canPlaceFlowers(self, flowerbed, n):
+        if n == 0:
+            return Truegithub
+        size = len(flowerbed)
+        for i in range(size):
+            if flowerbed[i] == 0:
+                left_empty = (i == 0 or flowerbed[i-1] == 0)
+                right_empty = (i == size-1 or flowerbed[i+1] == 0)
+
+                if left_empty and right_empty:
+                    flowerbed[i] = 1
+                    n -= 1
+                    if n == 0:
+                        return True
+        return False
+
+Time Complexity: O(n)
+Space Complexity: O(1)
