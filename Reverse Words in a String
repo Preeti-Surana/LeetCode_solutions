@@ -1,0 +1,14 @@
+Approach:-
+- Split the string into words.
+- Reverse the list of words.
+- Join them with a single space
+
+Code:-
+class Solution(object):
+    def reverseWords(self, s):
+        words = s.split()
+        words.reverse()
+        return " ".join(words)
+
+Time Complexity : O(n)
+Space Complexity : O(n)
