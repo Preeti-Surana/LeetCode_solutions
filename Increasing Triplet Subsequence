@@ -1,0 +1,24 @@
+Approach:-
+We need to find if there exists:  nums[i] < nums[j] < nums[k]
+Traverse the array once:
+- If current number is smaller than first, update first.
+- Else if current number is bigger than first but smaller than second, update second.
+- Else current number is bigger than both → triplet exists.
+
+Code:-
+class Solution(object):
+    def increasingTriplet(self, nums):
+        first = float('inf')
+        second = float('inf')
+
+        for num in nums:
+            if num <= first:
+                first = num
+            elif num <= second:
+                second = num
+            else:
+                return True
+        return False
+
+Time Complexity : O(n)
+Space Complexity : O(1)
