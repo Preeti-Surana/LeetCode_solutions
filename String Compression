@@ -1,0 +1,30 @@
+Approach:-
+Use sliding window (two pointers).
+
+- Expand the window using right and store frequency of a, b, c.
+- When the window contains all three characters, add n - right to the answer because all ending positions after right will form valid substrings.
+- Shrink the window from the left to find smaller valid windows.
+
+Code:-
+class Solution(object):
+    def compress(self, chars):
+        n = len(chars)
+        read = 0
+        write = 0
+        while read < n:
+            current = chars[read]
+            cnt = 0
+            while (read < n and chars[read] == current):
+                cnt+=1
+                read+=1
+            chars[write] = current
+            write+=1
+            if cnt >1:
+                for digit in str(cnt):
+                    chars[write]=digit
+                    write+=1
+
+        return write
+
+Time Complexity : O(n)
+Space Complexity : O(1)
