@@ -1,0 +1,26 @@
+Approach:-
+Use sliding window with two pointers.
+- Expand the right pointer and count characters (a, b, c).
+- When the current window contains all three characters, it means all substrings ending from right to the end are valid.
+- Add n - right to the answer.
+- Shrink the window from the left to find more valid substrings.
+Code:-
+class Solution(object):
+    def numberOfSubstrings(self, s):
+        n = len(s)
+        count = [0, 0, 0]
+        left = 0
+        ans = 0
+
+        for right in range(n):
+            count[ord(s[right]) - ord('a')] += 1
+
+            while count[0] > 0 and count[1] > 0 and count[2] > 0:
+                ans += n - right
+                count[ord(s[left]) - ord('a')] -= 1
+                left += 1
+
+        return ans 
+
+Time Complexity : O(n)
+Space Complexity : O(1)
