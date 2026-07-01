@@ -1,3 +1,10 @@
+Approach:-
+Use two pointers to traverse both strings simultaneously.
+- Start from index 0 of both strings.
+- Take one character from word1, then one from word2, and add them to the answer.
+- Continue until one string is completely traversed.
+- If any string has remaining characters, append them at the end.
+- Convert the list into a string and return.
 Code:-
 class Solution(object):
     def mergeAlternately(self, word1, word2):
@@ -19,5 +26,6 @@ class Solution(object):
             j+=1
 
         return "".join(ans)
-        
-        
+
+Time Complexity: O(n + m)
+Space Complexity: O(n + m)
