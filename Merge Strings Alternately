@@ -5,6 +5,7 @@ Use two pointers to traverse both strings simultaneously.
 - Continue until one string is completely traversed.
 - If any string has remaining characters, append them at the end.
 - Convert the list into a string and return.
+
 Code:-
 class Solution(object):
     def mergeAlternately(self, word1, word2):
