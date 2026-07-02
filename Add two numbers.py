@@ -1,5 +1,5 @@
-Brute force
-- Convert linked lists into numbers, add them, and convert the result back into a linked list.
+"""Brute force
+- Convert linked lists into numbers, add them, and convert the result back into a linked list."""
 - code:-
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
@@ -34,8 +34,8 @@ class Solution(object):
 
         return dummy.next
 
-Optimized
-- Add nodes digit by digit using carry and create the result linked list simultaneously.
+"""Optimized
+- Add nodes digit by digit using carry and create the result linked list simultaneously."""
 - code :-
 
 class Solution(object):
@@ -60,8 +60,8 @@ class Solution(object):
                 l2 = l2.next
         return dummy.next
 
-- Time: O(max(n,m))
+"""- Time: O(max(n,m))
 - Space: O(max(n,m))
 
 Recursive
-- Perform digit addition recursively by passing the carry to the next node
+- Perform digit addition recursively by passing the carry to the next node"""
